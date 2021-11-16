@@ -1,6 +1,12 @@
 class Developer < ApplicationRecord
   include Availability
 
+  enum search_status: {
+    actively_looking: 1,
+    open: 2,
+    not_interested: 3
+  }
+
   belongs_to :user
   has_one_attached :avatar
   has_one_attached :cover_image
